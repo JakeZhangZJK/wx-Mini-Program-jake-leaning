@@ -1,0 +1,13 @@
+<!--九宫格列表 -->
+<scroll-view class="grid-list"  scroll-y="true" lower-threshold="50"
+ scroll-with-animation="true" enable-back-to-top="false">
+  <view class="cu-list grid col-{{gridCol}} ">
+    <view class="cu-item margin-top" wx:for="{{iconList}}" wx:key wx:if="{{index<gridCol*3}}">
+    <navigator url="" open-type="navigate" hover-class="navigator-hover">
+      <image class="" src="{{item.icon}}"
+       style="width:60rpx;height:60rpx;margin:0" mode="widthFix" lazy-load="true" binderror="" bindload=""/>
+      <text>{{item.name}}</text>
+      </navigator>
+    </view>
+  </view>
+  </scroll-view>

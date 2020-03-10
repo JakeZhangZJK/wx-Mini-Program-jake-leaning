@@ -1,0 +1,29 @@
+.container{
+  display: flex;
+  align-items: center;
+  margin-left: 10rpx;
+  position: relative
+}
+.bar{
+  flex: 1;
+  height: 68rpx;
+  font-size: 28rpx;
+  border-radius: 50px;
+  background-color: #f5f5f5;
+  padding-left: 60rpx;
+}
+.search-btn{
+width: 160rpx !important;
+margin: 0 15rpx !important;
+font-size: 24rpx!important;
+color: #fff !important;
+background-color: #FF6633 !important;
+border-radius: 50px !important;
+
+}
+.icon-sousuo{
+  position: absolute;
+  top: 50%;
+  transform: translate(16rpx, -50%);
+  color: #9f9f9f;
+}

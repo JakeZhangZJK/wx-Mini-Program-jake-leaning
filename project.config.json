@@ -1,0 +1,84 @@
+{
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"enhance": true
+	},
+	"appid": "wxfa754f0a5670715b",
+	"projectname": "jake-leeaning",
+	"libVersion": "2.10.2",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "db guide",
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "文章详情",
+					"pathName": "pages/article/article",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发现",
+					"pathName": "pages/find/find",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "博客编辑",
+					"pathName": "pages/blog-edit/blog-edit",
+					"query": "nickName:=\"Jake Zhang\",&avatarUrl:=\"https://wx.qlogo.cn/mmopen/vi_32/UdAFfvtVavSzk2oxJ…0dsBKcHHF8GN7ZmnCb2VbLBEuoiaNE1kXlOjYnkiaEsWg/132\"& gender:=\"1\"",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "测试上传图片",
+					"pathName": "pages/my-test/my-test",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

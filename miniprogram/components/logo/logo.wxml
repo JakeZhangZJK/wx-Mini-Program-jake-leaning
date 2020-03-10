@@ -1,0 +1,7 @@
+<!-- logo与title组件 -->
+<view class="cu-item  logo-container">
+  <view class="content flex align-center">
+    <image src="../../images/logo.png" class="logo-style" mode="widthFix"></image>
+    <text class="logo-title text-white">{{headTitle}}</text>
+  </view>
+</view>

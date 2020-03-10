@@ -1,0 +1,9 @@
+<!-- 底部弹出框组件 -->
+<view class="coverlay" hidden="{{!modalShow}}"> 
+  <view class="bottom-modal-penal">
+  <i class="iconfont icon-searchclose" bind:tap="onClose"></i>
+  <!-- 具名插槽 -->
+  <slot name="modal-content"></slot>
+</view>
+</view>
+  

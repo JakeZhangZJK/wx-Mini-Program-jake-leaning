@@ -1,0 +1,90 @@
+
+.blog-edit-container {
+  padding: 20rpx;
+
+}
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  padding: 20rpx;
+  background-color: #f3f3f3;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ddd;
+}
+.send-btn{
+  width: 90rpx !important;
+  float: right;
+  background-color: #ff6633 !important;
+  font-size: 24rpx !important;
+}
+.cancel-btn{
+  width: 90rpx !important;
+  float: left;
+  background:none !important;
+  font-size: 24rpx !important;
+}
+.use-info{
+  margin-top: 100rpx;
+  display: flex;
+  align-items: center;
+  z-index: 9;
+  
+}
+
+.content {
+  width: 100%;
+  height: 285rpx;
+  box-sizing: border-box;
+}
+
+
+.words-num{
+  width: 100%;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  color: #ff6633;
+  font-size: 28rpx;
+  margin-right: 20rpx;
+}
+
+.image-list{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+
+}
+.image-wrap{
+  width: 230rpx;
+  height: 230rpx;
+  border: 1px dashed  #999;
+  color: #999;
+  margin: 5rpx;
+  position: relative;
+  overflow: hidden;
+}
+.image-item{
+  border: none;
+}
+.icon-posintion{
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50% , -50%);
+}
+.icon-position{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40rpx;
+  height: 40rpx;
+  background-color: #000;
+  opacity: .4;
+  color: #fff;
+  text-align: center;
+  font-size: 38rpx;
+  font-weight: bolder;
+}

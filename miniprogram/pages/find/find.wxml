@@ -1,0 +1,19 @@
+<view class="find-container">
+  <!-- 头部搜索 和 发布 -->
+  <view class="find-header">
+    <view class="publish-container" bind:tap="onPublish">
+      <i class="iconfont icon-bianji"></i>
+    </view>
+    <view class="search-container">
+      <c-search placeholder="{{placeholder}}"></c-search>
+    </view>
+  </view>
+  <!-- 动态卡片 -->
+  <view></view>
+</view>
+<!-- 底部模态框 -->
+<c-login modalShow="{{modalShow}}" 
+bind:loginsuccess="onLoginSuccess"
+bind:loginfail="onLoginFail">
+
+</c-login>

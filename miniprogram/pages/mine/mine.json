@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "c-logo":"../../components/logo/logo"
+  },
+    "enablePullDownRefresh": false,
+    "navigationBarTitleText": "我的",
+    "navigationBarTextStyle": "white"
+}

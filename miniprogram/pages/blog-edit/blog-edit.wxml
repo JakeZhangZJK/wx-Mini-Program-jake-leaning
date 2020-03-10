@@ -1,0 +1,32 @@
+<!-- 博客编辑页面 -->
+<view class="header">
+  <button class="cancel-btn  cu-btn  text-grey sm ">取消</button>
+  <button class="send-btn  cu-btn text-white sm shadow" bindtap="send" >发布</button><!--disabled="{{sendAbel}}"-->
+</view>
+<view class="use-info" hover-class="none">
+  <view class="cu-avatar round  margin-left" wx:key style="background-image:url({{avatarUrl}});">
+    <view class="cu-tag badge {{gender%2==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}"></view>
+  </view>
+  <view class="nick-name text-gray text-lg margin-left">{{nickName}}</view>
+</view>
+<view class="blog-edit-container">
+  <!-- 文本域 text area 属于原生组件 层级最高不会被覆盖 不能放在小程序元素中 -->
+  <textarea class="content" bindfocus="onFocus" bindblur="onBlur" bindinput="onInput" auto-focus="true" maxlength="168" placeholder="分享你的新鲜事儿~"></textarea>
+  <text class="words-num">{{wordsNum}}</text>
+  <!-- 图片列表 -->
+  <view class="image-list">
+    <block wx:for="{{images}}" wx:key="*this">
+      <view class="image-wrap image-item">
+        <image class="image" src="{{item}}" mode="aspectFill" bind:tap="onPreviewPhoto" data-imgsrc="{{item}}"></image>
+        <i class="iconfont icon-searchclose icon-position" bind:tap="onDelImg" data-index="{{index}}"></i>
+      </view>
+    </block>
+    <!-- 选择图片 -->
+    <view class="image-wrap selectphoto" bind:tap="onChooseImg" hidden="{{!selectPhoto}}">
+    <i class="iconfont icon-shangchuanshenfenzhengjiahao icon-posintion"></i>
+  </view>
+  </view>
+
+  
+</view>
+<!-- 底部发送 -->

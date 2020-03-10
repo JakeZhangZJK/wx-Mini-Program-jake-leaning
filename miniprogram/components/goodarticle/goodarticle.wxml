@@ -1,0 +1,125 @@
+<scroll-view class="goodarticle-list"  scroll-y="true" lower-threshold="50"
+ scroll-with-animation="true" enable-back-to-top="false">
+<block>
+  <navigator  url="../../pages/article/article" open-type="navigate" class="cu-bar bg-white solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text>
+     <view class="text-cut radius text-df" style="width:400rpx">
+      【前端料包】一文彻底搞懂BFC盒子模型
+     </view>
+    </view>
+    <view class="action">
+      <view class="cu-tag round bg-orange light">前端</view>
+      <view class="cu-tag round bg-olive light">h5</view>
+      <view class="cu-tag round bg-blue light">css</view>
+    </view>
+  </navigator> 
+  <navigator  url="" open-type="navigate" class="cu-bar bg-white solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text>
+
+     <view class="text-cut radius text-df" style="width:400rpx">
+      一文彻底搞懂JavaScript中的this、call、apply和bind
+     </view>
+    </view>
+    <view class="action">
+      <view class="cu-tag round bg-orange light">前端</view>
+      <view class="cu-tag round bg-olive light">h5</view>
+      <view class="cu-tag round bg-blue light">css</view>
+    </view>
+  </navigator> 
+  <navigator  url="" open-type="navigate" class="cu-bar bg-white solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text>
+     <view class="text-cut radius text-df" style="width:400rpx">
+      【前端料包】一文彻底搞懂BFC盒子模型
+     </view>
+    </view>
+    <view class="action">
+      <view class="cu-tag round bg-orange light">前端</view>
+      <view class="cu-tag round bg-olive light">h5</view>
+      <view class="cu-tag round bg-blue light">css</view>
+    </view>
+  </navigator> 
+   <navigator  url="" open-type="navigate" class="cu-bar bg-white solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text>
+     <view class="text-cut radius text-df" style="width:400rpx">
+      【前端料包】一文彻底搞懂BFC盒子模型
+     </view>
+    </view>
+    <view class="action">
+      <view class="cu-tag round bg-orange light">前端</view>
+      <view class="cu-tag round bg-olive light">h5</view>
+      <view class="cu-tag round bg-blue light">css</view>
+    </view>
+  </navigator> 
+  <navigator  url="" open-type="navigate" class="cu-bar bg-white solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text>
+
+     <view class="text-cut radius text-df" style="width:400rpx">
+      一文彻底搞懂JavaScript中的this、call、apply和bind
+     </view>
+    </view>
+    <view class="action">
+      <view class="cu-tag round bg-orange light">前端</view>
+      <view class="cu-tag round bg-olive light">h5</view>
+      <view class="cu-tag round bg-blue light">css</view>
+    </view>
+  </navigator> 
+  <navigator  url="" open-type="navigate" class="cu-bar bg-white solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text>
+     <view class="text-cut radius text-df" style="width:400rpx">
+      【前端料包】一文彻底搞懂BFC盒子模型
+     </view>
+    </view>
+    <view class="action">
+      <view class="cu-tag round bg-orange light">前端</view>
+      <view class="cu-tag round bg-olive light">h5</view>
+      <view class="cu-tag round bg-blue light">css</view>
+    </view>
+  </navigator> 
+   <navigator  url="" open-type="navigate" class="cu-bar bg-white solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text>
+     <view class="text-cut radius text-df" style="width:400rpx">
+      【前端料包】一文彻底搞懂BFC盒子模型
+     </view>
+    </view>
+    <view class="action">
+      <view class="cu-tag round bg-orange light">前端</view>
+      <view class="cu-tag round bg-olive light">h5</view>
+      <view class="cu-tag round bg-blue light">css</view>
+    </view>
+  </navigator> 
+  <navigator  url="" open-type="navigate" class="cu-bar bg-white solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text>
+
+     <view class="text-cut radius text-df" style="width:400rpx">
+      一文彻底搞懂JavaScript中的this、call、apply和bind
+     </view>
+    </view>
+    <view class="action">
+      <view class="cu-tag round bg-orange light">前端</view>
+      <view class="cu-tag round bg-olive light">h5</view>
+      <view class="cu-tag round bg-blue light">css</view>
+    </view>
+  </navigator> 
+  <navigator  url="" open-type="navigate" class="cu-bar bg-white solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text>
+     <view class="text-cut radius text-df" style="width:400rpx">
+      【前端料包】一文彻底搞懂BFC盒子模型
+     </view>
+    </view>
+    <view class="action">
+      <view class="cu-tag round bg-orange light">前端</view>
+      <view class="cu-tag round bg-olive light">h5</view>
+      <view class="cu-tag round bg-blue light">css</view>
+    </view>
+  </navigator> 
+</block>
+</scroll-view>

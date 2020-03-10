@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "c-swiper":"../../components/swiper/swiper",
+    "c-nav":"../../components/nav/nav",
+    "c-goodarticle":"../../components/goodarticle/goodarticle",
+    "c-booklist":"../../components/booklist/booklist",
+    "c-grid":"../../components/grid/grid",
+    "c-booklist":"../../components/booklist/booklist",
+    "c-logo":"../../components/logo/logo"
+  }
+}

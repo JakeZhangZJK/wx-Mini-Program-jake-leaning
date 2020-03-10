@@ -1,0 +1,4 @@
+/* components/goodarticle/goodarticle.wxss */
+.goodarticle-list{
+  height: 630rpx;
+}

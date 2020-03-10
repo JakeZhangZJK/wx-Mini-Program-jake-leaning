@@ -1,0 +1,16 @@
+/* miniprogram/pages/article/article.wxss */
+page{
+  padding-bottom: 100rpx;
+}
+.article-body{
+  height: 967rpx;
+  padding: 0 30rpx;
+}
+.article-detail{
+  margin-top: 30rpx;
+  margin-bottom: 50rpx;
+  line-height: 1.5em;
+  letter-spacing: 2rpx;
+  text-indent: 2em;
+  text-align: justify;
+}
