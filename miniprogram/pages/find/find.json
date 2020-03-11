@@ -2,9 +2,8 @@
   "usingComponents": {
     "c-logo": "../../components/logo/logo",
     "c-search": "../../components/search/search",
-    "c-dynamic": "../../components/dynamic/dynamic",
-    "c-login": "../../components/login/login"
-
+    "c-login": "../../components/login/login",
+    "c-blog-card":"../../components/blog-card/blog-card"
   },
   "enablePullDownRefresh": true,
   "navigationBarTitleText": "发现",

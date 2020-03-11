@@ -1,0 +1,31 @@
+<!-- 博客卡片组件 -->
+
+<view class="cu-card dynamic blog-card-margin-top">
+  <view class="cu-item shadow">
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar lg round" style="background-image:url({{blog.avatarUrl}});"></view>
+        <view class="content flex-sub">
+          <view>{{blog.nickName}}</view>
+          <view class="text-gray text-sm flex justify-between">
+            {{_createTime}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="text-content"> {{blog.content}} </view>
+    <view class="blog-img">
+    <block wx:for="{{blog.img}}"wx:key="{{index}}">
+      <image class="image" src="{{item}}" mode="aspectFill" catch:tap="onPreviewImage"
+      data-imgsrc="{{item}}"
+      data-imgs="{{blog.img}}"></image>
+    </block>
+    </view>
+    <view class="text-gray text-sm text-right padding">
+      <text class="cuIcon-attentionfill text-lg margin-lr-xs"></text> 10
+      <text class="cuIcon-appreciatefill text-lg margin-lr-xs"></text> 20
+      <text class="cuIcon-messagefill text-lg margin-lr-xs"></text>30
+    </view>
+  </view>
+</view>
+

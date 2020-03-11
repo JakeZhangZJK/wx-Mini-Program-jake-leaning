@@ -1,16 +1,23 @@
 <view class="find-container">
   <!-- 头部搜索 和 发布 -->
   <view class="find-header">
-    <view class="publish-container" bind:tap="onPublish">
+    <view class="publish-container" bind:tap="onPublish" hover-class="button-hover">
       <i class="iconfont icon-bianji"></i>
     </view>
     <view class="search-container">
-      <c-search placeholder="{{placeholder}}"></c-search>
+      <c-search placeholder="{{placeholder}}" bind:search="onSearch"></c-search>
     </view>
   </view>
-  <!-- 动态卡片 -->
-  <view></view>
+  <view class="margin-top">
+    
+  </view>
+  <!-- blog卡片 -->
+  <block wx:for="{{blogList}}" wx:key="_id">
+    <c-blog-card blog="{{item}}" bind:tap="goComment" data-blogid="{{item._id}}"></c-blog-card>
+  </block>
+    
 </view>
+<view class="bottom-tip text-xs text-grey">人家是有底线的啦~😜</view>
 <!-- 底部模态框 -->
 <c-login modalShow="{{modalShow}}" 
 bind:loginsuccess="onLoginSuccess"

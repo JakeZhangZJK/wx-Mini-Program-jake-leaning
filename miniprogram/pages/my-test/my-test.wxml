@@ -1,2 +1,2 @@
 <!--miniprogram/pages/my-test/my-test.wxml-->
-<button bind:tag="send">上传图片</button>
+<button bind:tap="addImg">上传图片</button>

@@ -1,0 +1,17 @@
+/* components/blog-card/blog-card.wxss */
+.blog-card-margin-top{
+  margin-top: -30rpx;
+}
+.blog-img{
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  margin-left: 10rpx;
+
+}
+.blog-img .image{
+  width: 210rpx;
+  height: 210rpx;
+  margin: 10rpx;
+  border-radius: 5px;
+}

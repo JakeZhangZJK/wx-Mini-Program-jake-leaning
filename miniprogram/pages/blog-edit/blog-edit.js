@@ -1,7 +1,11 @@
 //最大博文长度
-const MAX_WORDS_NUM = 168
+const MAX_WORDS_NUM = 168;
 //最大图片张数
-const MAX_IMG_NUM = 9
+const MAX_IMG_NUM = 9;
+const db = wx.cloud.database()
+// 输入的文字内容
+let content = ''
+let userInfo = {}
 Page({
   options: {
     addGlobalClass: true
@@ -16,43 +20,54 @@ Page({
     nickName: '',
     avatarUrl: '',
     gender: 1,
-    sendAbel: true,
+    // sendAbel: true,
     images: []
   },
-  //发布博客
-  send() {
-    //数据 --> 云数据库
-    // 数据库：文字内容，图片，openid，用户昵称，头像，时间
-    // 图片：云存储
-    // wx.showLoading({
-    //   title: '上传中...',
-    // })
-    let len = this.data.images.length
-    console.log(len)
-    for (let i = 0; i < len; i++) {
-      let item = this.data.images[i]
-      console.log(i)
-      // 文件扩展名处理
-      let suffix = /\.w+$/.exec(item)[0]
-      wx.cloud.uploadFile({
-        cloudPath: 'blog/' + Date.now() + '-' + Math.random() * 1000000 + suffix, // 云端路径,保证文件名唯一
-        filePath: item, //临时路径
-        success: (res) => {
-          Console.log(res)
-          // wx.hideLoading()
-        },
-        fail: (err) => {
-          console.log(err)
-        },
-      })
-    }
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    console.log(options)
+    userInfo = options
+    this.setData({
+      nickName: options.nickName,
+      avatarUrl: options.avatarUrl,
+      gender: options.gender
+    })
 
   },
-  // 预览图片
-  onPreviewPhoto(e) {
-    wx.previewImage({
-      current: e.target.dataset.imgsrc,
-      urls: this.data.images
+  onInput(e) {
+    let wordsNum = e.detail.cursor;
+    if (wordsNum >= MAX_WORDS_NUM) {
+      wordsNum = `🤪字数不能超过${MAX_WORDS_NUM}`
+    }
+    this.setData({
+      wordsNum
+    })
+    if (wordsNum >= 1) {
+      this.setData({
+        sendAbel: false
+      })
+      content = e.detail.value
+    }
+  },
+  //选择图片
+  onChooseImg(e) {
+    let max = MAX_IMG_NUM - this.data.images.length
+    wx.chooseImage({
+      count: max,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: (res) => {
+        //console.log(res)// 有数据
+        this.setData({
+          images: this.data.images.concat(res.tempFilePaths)
+        })
+        max = MAX_IMG_NUM - this.data.images.length
+        this.setData({
+          selectPhoto: max <= 0 ? false : true
+        })
+      }
     });
   },
   // 删除图片
@@ -68,41 +83,109 @@ Page({
       })
     }
   },
-  //选择图片
-  onChooseImg(e) {
-    let max = MAX_IMG_NUM - this.data.images.length
-    wx.chooseImage({
-      count: max,
-      sizeType: ['original', 'compressed'],
-      sourceType: ['album', 'camera'],
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          images: this.data.images.concat(res.tempFilePaths)
-        })
-        max = MAX_IMG_NUM - this.data.images.length
-        this.setData({
-          selectPhoto: max <= 0 ? false : true
-        })
-      },
-      fail: () => {},
-      complete: () => {}
+
+  // 预览图片
+  onPreviewPhoto(e) {
+    wx.previewImage({
+      current: e.target.dataset.imgsrc,
+      urls: this.data.images
     });
   },
-  onInput(e) {
-    let wordsNum = e.detail.cursor;
-    if (wordsNum >= MAX_WORDS_NUM) {
-      wordsNum = `🤪字数不能超过${MAX_WORDS_NUM}`
+
+
+  //发布博客
+  // 2、数据 -> 云数据库
+    // 数据库：内容、图片fileID、openid、昵称、头像、时间
+    // 1、图片 -> 云存储 fileID 云文件ID
+  send() {
+    if (content.trim() === '') {
+      wx.showModal({
+        title: '亲，您的内容空空如也',
+        content: '😂😂😂',
+      })
+      return
     }
-    this.setData({
-      wordsNum
+    wx.showLoading({
+      title: '发布中',
+      mask: true,
     })
-    if (wordsNum >= 1) {
-      this.setData({
-        sendAbel: false
+
+    let promiseArr = []
+    let fileIds = []
+    // 图片上传
+    for (let i = 0, len = this.data.images.length; i < len; i++) {
+      let p = new Promise((resolve, reject) => {
+        let item = this.data.images[i]
+        // 文件扩展名
+        let suffix = /\.\w+$/.exec(item)[0]
+        wx.cloud.uploadFile({
+          cloudPath: 'blog/' + Date.now() + '-' + Math.random() * 1000000 + suffix,// 对文件名进行处理，保证文件名唯一
+          filePath: item,// 临时路径
+          success: (res) => {
+            console.log(res.fileID)
+            fileIds = fileIds.concat(res.fileID)
+            resolve()
+          },
+          fail: (err) => {
+            console.error(err)
+            reject()
+          }
+        })
+      })
+      promiseArr.push(p)
+    }
+    // 存入到云数据库
+    Promise.all(promiseArr).then((res) => {
+      db.collection('blog').add({
+        data: {
+          ...userInfo,
+          content,
+          img: fileIds,
+          createTime: db.serverDate(), // 服务端的时间
+
+        }
+      }).then((res) => {
+        wx.hideLoading()
+        wx.showToast({
+          title: '😄发布成功',
+        })
+
+        // 返回blog页面，并且刷新
+        wx.navigateBack({
+          delta: 1
+        });
+        const pages = getCurrentPages()
+        // console.log(pages)
+        // 取到上一个页面
+        const prevPage = pages[pages.length - 2]
+        // 调用上一页面的刷新方法
+        prevPage.onPullDownRefresh()
+      })
+    }).catch((err) => {
+      wx.hideLoading()
+      wx.showToast({
+        title: '发布失败',
+      })
+    })
+  },
+  onCancel() {
+    if (content.trim() !== '') {
+      wx.showModal({
+        title: '亲，此操作可能不会保留您当前内容哦~',
+        content: '🤯🤯🤯',
+        showCancel: true,
+        cancelText: '取消',
+        cancelColor: '#000000',
+        confirmText: '确定',
+        confirmColor: '#ff6633',
       })
     }
+    this.setData({
+      content:''
+    })
+    return
   },
+
 
   // onFocus(e) {
   //   this.setData({
@@ -115,18 +198,7 @@ Page({
   //   })
   // },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    console.log(options)
-    this.setData({
-      nickName: options.nickName,
-      avatarUrl: options.avatarUrl,
-      gender: options.gender
-    })
 
-  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

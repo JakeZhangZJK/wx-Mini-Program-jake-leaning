@@ -26,3 +26,13 @@
 .search-container{
   flex: 1;
 }
+.margin-top{
+  margin-top: 130rpx;
+}
+.bottom-tip{
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+  width: 100%;
+  text-align: center;
+
+}

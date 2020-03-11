@@ -1,4 +1,6 @@
 // miniprogram/pages/find/find.js
+// 搜索的关键字
+let keyWord = ''
 Page({
   options: {
     addGlobalClass:true
@@ -7,9 +9,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    headTitle: "精彩一瞬",//头部标题
+    // headTitle: "精彩一瞬",//头部标题
     placeholder: "搜一搜~",
-    modalShow:false// 控制底部模态框是否显示
+    modalShow: false,// 控制底部模态框是否显示
+    blogList: [],// 博客列表
+    showTip:0
   },
   // 发布功能
   onPublish() {
@@ -47,7 +51,7 @@ Page({
       cancelText: '取消',
       cancelColor: '#000000',
       confirmText: '确定',
-      confirmColor: '#3CC51F',
+      confirmColor: '#ff6633',
     })
   },
 
@@ -55,7 +59,56 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this._loadBlogList()
 
+    // 小程序端调用云数据库
+    /*  const db = wx.cloud.database()
+     db.collection('blog').orderBy('createTime', 'desc').get().then((res)=>{
+       console.log(res)
+       const data = res.data
+       for (let i = 0, len = data.length; i<len; i++){
+         data[i].createTime = data[i].createTime.toString()
+       }
+       this.setData({
+         blogList: data
+       })
+     }) */
+  },
+  // 搜索方法
+  onSearch(event) {
+    // console.log(event.detail.keyWord)
+    this.setData({
+      blogList: []
+    })
+    keyWord = event.detail.keyWord
+    this._loadBlogList(0)
+  },
+  _loadBlogList(start = 0) {
+    wx.showLoading({
+      title: '🧐拼命加载中',
+    })
+    wx.cloud.callFunction({
+      name: 'blog',
+      data: {
+        keyWord,
+        start,
+        count: 10,
+        $url: 'list',
+      }
+    }).then((res) => {
+      console.log(res)
+      this.setData({
+        blogList: this.data.blogList.concat(res.result)
+      })
+      wx.hideLoading()
+      wx.stopPullDownRefresh()
+    })
+  },
+  //跳转到博客详情页
+  goComment(event) {
+    wx.navigateTo({
+      url: '../../pages/blog-comment/blog-comment?blogId=' + event.target.dataset.blogid,
+    })
   },
 
   /**
@@ -90,14 +143,17 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      blogList: []
+    })
+    this._loadBlogList(0)// 刷新列表
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this._loadBlogList(this.data.blogList.length)
   },
 
   /**
