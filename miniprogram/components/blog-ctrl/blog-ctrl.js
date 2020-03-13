@@ -1,6 +1,7 @@
 let userInfo = {} // 用户信息
 const db = wx.cloud.database()// 云数据库初始化
 Component({
+  
   options: {
     addGlobalClass:true
   },

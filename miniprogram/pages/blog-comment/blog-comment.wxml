@@ -1,6 +1,8 @@
 <scroll-view class="" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
-  <c-blog-card blog="{{blog}}"></c-blog-card>
-  <c-blog-ctrl bind:refreshCommentList="_getBlogDetail" blogId="{{blog._id}}"></c-blog-ctrl>
+  <view class="" hover-class="none" hover-stop-propagation="false">
+    <c-blog-card blog="{{blog}}"></c-blog-card>
+    <c-blog-ctrl bind:refreshCommentList="_getBlogDetail" blogId="{{blog._id}}"></c-blog-ctrl>
+  </view>
   <view class="cu-bar bg-white solid-bottom margin comment-title">
     <view class='action'>
       <text class='cuIcon-titles text-orange'></text>

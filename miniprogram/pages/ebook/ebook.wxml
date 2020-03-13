@@ -1,0 +1,5 @@
+<!-- 头部搜素 -->
+<view class="padding-sm bg-white" hover-class="none" hover-stop-propagation="false">
+  <c-search></c-search>
+</view>
+

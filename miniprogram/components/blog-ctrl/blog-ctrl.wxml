@@ -13,8 +13,8 @@
 <c-login modalShow="{{loginShow}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail" />
 
 <c-bottom-modal modalShow="{{modalShow}}">
-  <form slot="modal-content" report-submit="false">
-    <textarea name="content" class="comment-content"  value="{{content}}" bindinput="onInput" fixed="true" placeholder="来点吐槽。。。"></textarea>
+  <form slot="modal-content">
+    <textarea  name="content" class="comment-content"  value="{{content}}" bindinput="onInput" fixed="true" placeholder="来点吐槽。。。"></textarea>
     <button class="btn send "  bind:tap="onSend">发送</button>
   </form>
 </c-bottom-modal>

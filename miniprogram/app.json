@@ -3,14 +3,15 @@
     "pages/home/home",
     "pages/article/article",
     "pages/find/find",
+    "pages/ebook/ebook",
     "pages/mine/mine",
     "pages/mine/record/record",
     "pages/mine/diary/diary",
-    "pages/mine/feedback/feedback",
     "pages/dynamic/dynamic",
     "pages/blog-edit/blog-edit",
     "pages/my-test/my-test",
     "pages/blog-comment/blog-comment"
+    
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -34,6 +35,12 @@
         "text": "发现",
         "iconPath": "images/find.png",
         "selectedIconPath": "images/_find.png"
+      },
+      {
+        "pagePath": "pages/ebook/ebook",
+        "text": "电子书",
+        "iconPath": "images/ebook.png",
+        "selectedIconPath": "images/_ebook.png"
       },
       {
         "pagePath": "pages/mine/mine",

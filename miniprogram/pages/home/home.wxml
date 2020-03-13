@@ -9,9 +9,5 @@
 <block wx:if="{{TabCur == 1}}">
   <c-grid iconList="{{iconList}}"></c-grid>
 </block>
-<block wx:if="{{TabCur == 2}}">
-  <view class="" hover-class="none" hover-stop-propagation="false">
-    <c-booklist></c-booklist>
-  </view>
-</block>
+
 

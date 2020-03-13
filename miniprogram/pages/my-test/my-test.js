@@ -47,6 +47,16 @@ Page({
     })
 
   },
+  showModal(e) {
+    this.setData({
+      modalName: e.currentTarget.dataset.target
+    })
+  },
+  hideModal(e) {
+    this.setData({
+      modalName: null
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

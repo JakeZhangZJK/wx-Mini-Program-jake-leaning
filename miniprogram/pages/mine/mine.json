@@ -4,5 +4,6 @@
   },
     "enablePullDownRefresh": false,
     "navigationBarTitleText": "我的",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "disableScroll":true
 }

@@ -51,7 +51,7 @@ Page({
     ],
     
     // 好文推荐数据
-    navList:['好文推荐','面试真经','前端电子书'],
+    navList:['好文推荐','面试真经'],
     swiperList: [{
       id: 0,
       type: 'image',

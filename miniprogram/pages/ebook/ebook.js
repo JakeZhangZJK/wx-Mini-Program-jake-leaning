@@ -1,5 +1,8 @@
-// miniprogram/pages/mine/feedback/feedback.js
+// miniprogram/pages/ebook/ebook.js
 Page({
+  options: {
+    addGlobalClass:true
+  },
 
   /**
    * 页面的初始数据

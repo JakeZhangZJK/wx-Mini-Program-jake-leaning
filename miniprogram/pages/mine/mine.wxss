@@ -3,28 +3,61 @@
   height: 100Vh;
   width: 100vw;
 }
+page {
+  background-color: #f1f1f1;
+}
+.profile-header {
+  background-image: linear-gradient(360deg, #34ace0,#ff6633);
+  /* animation: bganimation 45s infinite; */
+  /* background-image: radial-gradient(circle, #89e413,#af890b, #ff6633); */
+  /* background-size: 400%; */
+  height: 480rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-weight: 300;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+@keyframes bganimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
-.page.show {
+.avatar-url {
+  width: 200rpx;
+  height: 200rpx;
+  display: block;
   overflow: hidden;
+  border: 6rpx solid #fff;
+  border-radius: 50%;
 }
 
-.switch-sex::after {
-  content: "\e716";
+.nickname {
+  font-size: 36rpx;
+  margin-top: 20rpx;
+  font-weight: 400;
 }
 
-.switch-sex::before {
-  content: "\e7a9";
+/* 导航 */
+.img {
+  display: inline-block;
+  margin-right: 10rpx;
+  width: 1.6em;
+  height: 1.6em;
+  vertical-align: middle;
+  max-width: 100%;
 }
 
-.switch-music::after {
-  content: "\e66a";
-}
 
-.switch-music::before {
-  content: "\e6db";
-}
-.mine-container{
-  margin:240rpx auto;
-  text-align: center;
-  
-}
+
+
+

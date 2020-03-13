@@ -6,6 +6,8 @@
 }
 .comment-content {
   width: 560rpx;
+  height: 290rpx;
+  position: absolute;
   text-align: left;
   padding: 20rpx;
   font-size: 32rpx;

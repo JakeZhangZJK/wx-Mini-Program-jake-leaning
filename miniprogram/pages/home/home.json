@@ -7,5 +7,6 @@
     "c-grid":"../../components/grid/grid",
     "c-booklist":"../../components/booklist/booklist",
     "c-logo":"../../components/logo/logo"
-  }
+  },
+  "disableScroll":true
 }

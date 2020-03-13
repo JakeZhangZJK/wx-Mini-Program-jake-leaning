@@ -77,6 +77,12 @@
 					"pathName": "pages/my-test/my-test",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "电子书",
+					"pathName": "pages/ebook/ebook",
+					"scene": null
 				}
 			]
 		}

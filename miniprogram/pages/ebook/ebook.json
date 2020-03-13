@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+"c-search":"../../components/search/search"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "前端电子书",
+  "navigationBarTextStyle": "white"
+}

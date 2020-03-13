@@ -1,4 +1,6 @@
 .coverlay{
+  height: 100%;
+  overflow: hidden;
   position: fixed;
   top: 0;
   right: 0;
@@ -7,14 +9,14 @@
   z-index: 99;
   text-align: center;
   background-color: rgba(0, 0, 0, .6);
+  
 }
 .bottom-modal-penal{
   position: absolute;
   bottom: 0rpx;
   left: 0;
   width: 100%;
-  box-sizing: border-box;
-  min-height: 300rpx;
+  height: 300rpx;
   background-color: #f8f8f8;
   border-top-left-radius: 20rpx;
   border-top-right-radius: 20rpx;

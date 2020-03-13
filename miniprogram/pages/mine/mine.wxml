@@ -1,44 +1,30 @@
-
-<view class="mine-container" wx:if="{{!userName}}">
-<view class="padding">
-  <view class="cu-avatar round lg margin-left"wx:for="{{1}}"  wx:key style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big1000{{index+1}}.jpg);">
-    <view class="cu-tag badge {{index%2==0?'cuIcon-female bg-blue':'cuIcon-male bg-pink'}}"></view>
+<view class="profile-header">
+  <view class="avatar-url">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <open-data type="userNickName" class="nickname"></open-data>
+</view>
+<view class="cu-list menu card-menu margin-top  shadow-lg">
+  <navigator class="cu-item arrow" hover-class="none" url="../mine/record/record">
+    <view class="content">
+      <text class="cuIcon-tagfill text-blue"></text>
+      <text class="text-black">学习记录</text>
+    </view>
+  </navigator>
+</view>
+<view class="cu-list menu card-menu shadow-lg">
+  <navigator class="cu-item arrow" hover-class="none" url="../mine/diary/diary">
+    <view class="content">
+      <text class="cuIcon-camerafill text-pink"></text>
+      <text class="text-black">我的发现</text>
+    </view>
+  </navigator>
+</view>
+<view class="cu-list menu card-menu shadow-lg">
+  <view class="cu-item arrow" bind:tap="onTapQrCode">
+    <view class="content">
+      <text class="cuIcon-qrcode text-green"></text>
+      <text class="text-black">小程序码</text>
+    </view>
   </view>
 </view>
-<view class="padding flex flex-direction">
-  <button class="cu-btn bg-orange margin-tb-sm lg">点击授权登录</button>
-</view>
-</view>
-<block wx:else>
-<!-- header -->
-<view class="padding bg-white text-gray">
-  <view class="cu-avatar round lg"wx:for="{{1}}"  wx:key style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big1000{{index+1}}.jpg);">
-    <view class="cu-tag badge {{index%2==0?'cuIcon-female bg-blue':'cuIcon-male bg-pink'}}"></view>
-  </view>
-  <text class="margin-left" selectable="false" space="false" decode="false">{{userName}}</text>  
-</view>
-  <navigator class="" target="" url="./record/record" hover-class="navigator-hover" open-type="navigate">
-   <view class="cu-bar bg-white solid-bottom margin-top">
-     <view class="action">
-      <text class="cuIcon-tagfill text-blue "></text> 学习记录
-    </view>
-    </view>
-  </navigator>
-   <navigator class="" target="" url="./diary/diary" hover-class="navigator-hover" open-type="navigate">
-    <view class="cu-bar bg-white solid-bottom margin-top">
-     <view class="action">
-      <text class="cuIcon-camerafill text-pink "></text> 生活日记
-    </view>
-    </view>
-  </navigator>
-   <navigator class="" target="" url="./feedback/feedback" hover-class="navigator-hover" open-type="navigate">
-    <view class="cu-bar bg-white solid-bottom margin-top">
-     <view class="action">
-      <text class="cuIcon-phone text-grey "></text> 意见反馈
-    </view>
-    </view>
-  </navigator>
-    
-</block>
-  
-

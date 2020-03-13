@@ -9,7 +9,8 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    modalShow: Boolean
+    modalShow: Boolean,
+    modalName:String
   },
 
   /**

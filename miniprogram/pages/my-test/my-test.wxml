@@ -1,5 +1,19 @@
 <!--miniprogram/pages/my-test/my-test.wxml-->
 <button bind:tap="addImg">上传图片</button>
-<button bind:tap="showSendModal">上传图片</button>
-<c-middle-modal></c-middle-modal>
-1111111
+  <view class="action">
+    <text class="cuIcon-title text-orange "></text> 底部窗口
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="bottomModal">Bottom</button>
+  </view>
+<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white">
+      <view class="action text-orange">确定</view>
+      <view class="action text-blue" bindtap="hideModal">取消</view>
+    </view>
+    <view class="padding-xl">
+      Modal 内容。
+    </view>
+  </view>
+</view>

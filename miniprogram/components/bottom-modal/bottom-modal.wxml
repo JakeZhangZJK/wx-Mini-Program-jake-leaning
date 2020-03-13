@@ -1,5 +1,5 @@
 <!-- 底部弹出框组件 -->
-<view class="coverlay" hidden="{{!modalShow}}"> 
+<view class="coverlay" hidden="{{!modalShow}}" catchtouchmove='ture'> 
   <view class="bottom-modal-penal">
   <i class="iconfont icon-searchclose icon-color" bind:tap="onClose"></i>
   <!-- 具名插槽 -->
