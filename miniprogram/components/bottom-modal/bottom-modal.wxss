@@ -1,5 +1,5 @@
 .coverlay{
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -13,8 +13,11 @@
   bottom: 0rpx;
   left: 0;
   width: 100%;
-  height: 300rpx;
+  box-sizing: border-box;
+  min-height: 300rpx;
   background-color: #f8f8f8;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
 }
 .coverlay .icon-searchclose{
   position: absolute;
@@ -22,4 +25,7 @@
   top: 1rpx;
   font-size: 70rpx;
   padding: 20rpx;/*增加触控面积*/
+}
+.icon-color{
+  color: #ff6633;
 }

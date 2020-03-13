@@ -170,6 +170,9 @@ Page({
   },
   onCancel() {
     if (content.trim() !== '') {
+      this.setData({
+        content:'',
+      })
       wx.showModal({
         title: '亲，此操作可能不会保留您当前内容哦~',
         content: '🤯🤯🤯',
@@ -179,10 +182,12 @@ Page({
         confirmText: '确定',
         confirmColor: '#ff6633',
       })
+    } else {
+      wx.navigateBack({
+        delta: 1
+      });
     }
-    this.setData({
-      content:''
-    })
+    
     return
   },
 

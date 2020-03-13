@@ -5,6 +5,7 @@ Page({
   options: {
     addGlobalClass:true
   },
+
   /**
    * 页面的初始数据
    */
@@ -159,7 +160,16 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function (e) {
+    console.log(e)
+    let blogObj = encodeURIComponent.target.dataset.blog
+    return {
+      title: blogObj.content,
+      path: `/pages/blog-comment/blog-comment?blogId=${blogObj._id}`// 必须是完整路径
+      //imageUrl:
+      
+    }
+
 
   }
 })

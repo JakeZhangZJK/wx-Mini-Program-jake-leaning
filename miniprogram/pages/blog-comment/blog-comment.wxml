@@ -1,2 +1,33 @@
-<!--miniprogram/pages/blog-comment/blog-comment.wxml-->
-<text>miniprogram/pages/blog-comment/blog-comment.wxml</text>
+<scroll-view class="" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
+  <c-blog-card blog="{{blog}}"></c-blog-card>
+  <c-blog-ctrl bind:refreshCommentList="_getBlogDetail" blogId="{{blog._id}}"></c-blog-ctrl>
+  <view class="cu-bar bg-white solid-bottom margin comment-title">
+    <view class='action'>
+      <text class='cuIcon-titles text-orange'></text>
+      评论列表
+    </view>
+  </view>
+  <!-- 评论 -->
+  <block wx:for="{{commentList}}" wx:key="_id">
+    <view class="cu-card dynamic comment-container">
+      <view class="cu-item shadow">
+        <view class="cu-list menu-avatar comment solids-top">
+          <view class="cu-item">
+            <view class="cu-avatar round" style="background-image:url({{item.avatarUrl}});"></view>
+            <view class="content">
+              <view class="text-grey">{{item.nickName}}</view>
+              <view class="text-gray text-content text-df">{{item.content}}</view>
+              <view class="margin-top-sm flex justify-between">
+                <view class="text-gray text-df">{{item.createTime}}</view>
+                <!-- <view>
+              <text class="cuIcon-appreciate text-gray"></text>
+              <text class="cuIcon-messagefill text-gray margin-left-sm"></text>
+            </view> -->
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</scroll-view>

@@ -1,0 +1,56 @@
+.blog-ctrl-container{
+  margin-top: -35rpx;
+  padding: 5px 2px;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.comment-content {
+  width: 560rpx;
+  text-align: left;
+  padding: 20rpx;
+  font-size: 32rpx;
+}
+.send {
+  padding:15rpx 5rpx !important;
+  background: #ff6633;
+  width: 120rpx !important;
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+}
+.dingyue-container{
+  width: 100%;
+  text-align: center;
+
+}
+.dingyue-container .dingyue-button{
+  margin-top: 100rpx;
+  background-color: #ff6633;
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 5rpx !important;
+}
+.dingyue-container .dingyue-text{
+  margin-top: 30rpx;
+}
+.blog-ctrl-container{
+  position: relative;
+}
+.view-and-comment-btn{
+  margin-right: 60rpx;
+}
+.share-btn{
+  width: 50rpx !important;
+  padding: 0;
+  background-color: #fff;
+  border: none;
+  font-size: 36rpx;
+  font-weight: lighter;
+  position: absolute;
+  top:5rpx;
+  right: 20rpx;
+
+}

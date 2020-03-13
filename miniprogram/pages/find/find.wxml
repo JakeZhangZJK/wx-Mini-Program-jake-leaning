@@ -14,13 +14,14 @@
   <!-- blog卡片 -->
   <block wx:for="{{blogList}}" wx:key="_id">
     <c-blog-card blog="{{item}}" bind:tap="goComment" data-blogid="{{item._id}}"></c-blog-card>
-  </block>
-    
+    <!-- 评论区 -->
+    <c-blog-ctrl blogId="{{item._id}}" blog="{{item}}"></c-blog-ctrl>
+  </block>  
 </view>
+
 <view class="bottom-tip text-xs text-grey">人家是有底线的啦~😜</view>
 <!-- 底部模态框 -->
 <c-login modalShow="{{modalShow}}" 
 bind:loginsuccess="onLoginSuccess"
 bind:loginfail="onLoginFail">
-
 </c-login>

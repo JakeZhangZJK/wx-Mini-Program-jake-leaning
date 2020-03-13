@@ -39,6 +39,7 @@ exports.main = async (event, context) => {
     ctx.body = blogList
   })
 
+  //博客详情查询
   app.router('detail', async (ctx, next) => {
     let blogId = event.blogId
     // 详情查询
@@ -48,14 +49,14 @@ exports.main = async (event, context) => {
       return res.data
     })
     // 评论查询
-    const countResult = await blogCollection.count()
+    const countResult = await blogCollection.count() // 评论总数
     const total = countResult.total
     let commentList = {
       data: []
     }
     if (total > 0) {
-      const batchTimes = Math.ceil(total / MAX_LIMIT)
-      const tasks = []
+      const batchTimes = Math.ceil(total / MAX_LIMIT)// 查询次数
+      const tasks = [] // 定义评论列表
       for (let i = 0; i < batchTimes; i++) {
         let promise = db.collection('blog-comment').skip(i * MAX_LIMIT)
           .limit(MAX_LIMIT).where({
@@ -64,7 +65,7 @@ exports.main = async (event, context) => {
         tasks.push(promise)
       }
       if (tasks.length > 0) {
-        commentList = (await Promise.all(tasks)).reduce((acc, cur) => {
+        commentList = (await Promise.all(tasks)).reduce((acc, cur) => {// 累加器
           return {
             data: acc.data.concat(cur.data)
           }

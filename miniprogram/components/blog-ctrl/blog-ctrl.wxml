@@ -1,3 +1,26 @@
-<view class="container">
-  <slot></slot>
+<view class=" blog-ctrl-container margin  bg-white text-gray text-xl flex justify-end">
+ 
+  <view class="view-and-comment-btn" hover-class="none">
+    <text class="cuIcon-attention text-xl margin-lr-xs"></text>
+    <!-- <text class="text-sm">10</text> -->
+    <text class="cuIcon-message text-xl margin-lr-xs" bind:tap="onComment"></text>
+    <!-- <text class="text-sm">10</text> -->
+  </view>
+  <button class="share-btn text-gray" hover-class="share-hover" open-type="share" data-blogid="{{blogId}}" data-blog="{{blog}}">
+    <text class="cuIcon-share text-xl margin-lr-xs"></text>
+  </button>
 </view>
+<c-login modalShow="{{loginShow}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail" />
+
+<c-bottom-modal modalShow="{{modalShow}}">
+  <form slot="modal-content" report-submit="false">
+    <textarea name="content" class="comment-content"  value="{{content}}" bindinput="onInput" fixed="true" placeholder="来点吐槽。。。"></textarea>
+    <button class="btn send "  bind:tap="onSend">发送</button>
+  </form>
+</c-bottom-modal>
+<!-- <c-bottom-modal modalShow="{{sendShow}}">
+<view slot="modal-content" class="dingyue-container" hover-class="none">
+  <button class="cu-btn dingyue-button" bind:tap="sendMessage">订阅消息通知</button>
+  <view class="dingyue-text  text-gray" bind:tap="hideSendModal">不用了，谢谢！</view>
+</view>
+</c-bottom-modal> -->

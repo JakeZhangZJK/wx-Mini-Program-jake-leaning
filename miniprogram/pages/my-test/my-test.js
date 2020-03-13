@@ -4,6 +4,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showModal:false
+  },
+  showSendModal() { 
+
   },
   addImg: function () {
     wx.chooseImage({ //选择图片

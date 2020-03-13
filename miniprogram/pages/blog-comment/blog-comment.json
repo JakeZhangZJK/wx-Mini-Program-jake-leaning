@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "c-blog-card":"../../components/blog-card/blog-card",
+    "c-blog-ctrl":"../../components/blog-ctrl/blog-ctrl"
+   
+  },
+  "navigationBarTitleText":"博客详情"
 }

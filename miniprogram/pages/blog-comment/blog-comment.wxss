@@ -1,1 +1,8 @@
 /* miniprogram/pages/blog-comment/blog-comment.wxss */
+.comment-title{
+  margin-top: -15rpx;
+  text-align: left;
+}
+.comment-container{
+  margin-top: -60rpx;
+}
