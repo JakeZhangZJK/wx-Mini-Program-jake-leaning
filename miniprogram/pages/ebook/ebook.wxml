@@ -1,5 +1,8 @@
 <!-- 头部搜素 -->
-<view class="padding-sm bg-white" hover-class="none" hover-stop-propagation="false">
-  <c-search></c-search>
+<view class="flex align-center padding-sm bg-white" hover-class="none" hover-stop-propagation="false">
+  <navigator class="" target="" url="../ebook-shelf/ebook-shelf" hover-class="none" open-type="navigate">
+    <text class="margin-right-xs text-df text-bold">书架</text>
+  </navigator>
+  <c-search class="flex-twice"></c-search>
 </view>
-
+<c-ebook-list ebookList="{{ebookList}}"></c-ebook-list>

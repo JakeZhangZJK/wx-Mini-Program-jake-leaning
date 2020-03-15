@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-"c-search":"../../components/search/search"
+"c-search":"../../components/search/search",
+"c-ebook-list":"../../components/booklist/booklist"
   },
   "enablePullDownRefresh": true,
   "navigationBarTitleText": "前端电子书",

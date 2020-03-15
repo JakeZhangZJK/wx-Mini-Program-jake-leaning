@@ -1,4 +1,4 @@
-// components/booklist/booklist.js
+// components/grid/grid.js
 Component({
   options: {
     addGlobalClass:true
@@ -7,6 +7,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    ebookList: Array,
 
   },
 
@@ -14,13 +15,13 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    gridCol:3,
+    skin: false,
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-
   }
 })

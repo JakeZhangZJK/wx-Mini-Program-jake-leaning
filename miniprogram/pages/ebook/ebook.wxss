@@ -1,1 +1,31 @@
 /* miniprogram/pages/ebook/ebook.wxss */
+.ebook-container{
+  padding: 16rpx;
+  background-color: #fafafa;
+  min-height: 962rpx;
+}
+.ebook-list-container{
+  display: flex;
+  justify-content: safe;
+  flex-wrap: wrap;
+  margin-top: 10rpx;
+}
+.ebook-img{
+  width: 240rpx;
+}
+.ebook-list-item{
+  width: 240rpx;
+  display: flex;
+  padding: 16rpx;
+  flex-direction: column;
+  
+  
+}
+.ebook-title{
+  width: 100%;
+  margin-top: 20rpx;
+  overflow: hidden;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+}

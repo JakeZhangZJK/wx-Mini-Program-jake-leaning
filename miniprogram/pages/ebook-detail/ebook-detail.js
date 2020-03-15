@@ -1,35 +1,12 @@
-// miniprogram/pages/ebook/ebook.js
+// miniprogram/pages/ebook-detail/ebook-detail.js
 Page({
-  options: {
-    addGlobalClass:true
-  },
+  
 
   /**
    * 页面的初始数据
    */
   data: {
-    ebookList: [
-      {
-        id: 0,
-        image: '../../images/js-s.jpeg',
-        title:'你不知道的JavaScript（上卷）'
-      },
-      {
-        id: 1,
-        image: '../../images/js-z.jpeg' ,
-        title:'你不知道的JavaScript（中卷）'
-      },
-      {
-        id: 2,
-        image:'../../images/js-x.jpeg',
-        title:'你不知道的JavaScript（下卷）'
-      },
-      {
-        id: 3,
-        image:'../../images/h5-css3-s.jpeg',
-        title:'html与css3'
-        },
-      ]
+
   },
 
   /**

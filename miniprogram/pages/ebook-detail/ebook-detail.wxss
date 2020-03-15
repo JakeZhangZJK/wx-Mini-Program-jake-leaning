@@ -1,0 +1,35 @@
+.ebook-page{
+  height: 100vh;
+  padding:30rpx 25rpx;
+  background-color: #fafafa;
+}
+.ebook-detail-container{
+  display: flex;
+
+}
+.ebook-info{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: safe;
+}
+.ebook-cover-image{
+  width: 240rpx;
+}
+.ebook-cover-image-detail{
+  width: 240rpx;
+}
+.ebook-title{
+  margin-top: 20rpx;
+}
+.foot-btn{
+  width: 325rpx !important;
+  padding: 45rpx !important;
+}
+.btn-shujia{
+  color: #ff6633;
+  border-color: #ff6633 !important;
+}
+.btn-read{
+  background-color: #ff6633 !important;
+}

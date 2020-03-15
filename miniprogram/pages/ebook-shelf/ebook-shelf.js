@@ -1,8 +1,5 @@
-// miniprogram/pages/ebook/ebook.js
+// miniprogram/pages/ebook-shelf/ebook-shelf.js
 Page({
-  options: {
-    addGlobalClass:true
-  },
 
   /**
    * 页面的初始数据
@@ -30,6 +27,7 @@ Page({
         title:'html与css3'
         },
       ]
+
   },
 
   /**

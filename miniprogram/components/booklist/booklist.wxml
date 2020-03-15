@@ -1,56 +1,13 @@
-<scroll-view class="book-list"  scroll-y="true" lower-threshold="50"
+<!--九宫格列表 -->
+<scroll-view class="grid-list"  scroll-y="true" lower-threshold="50"
  scroll-with-animation="true" enable-back-to-top="false">
- 
-<navigator  url="../../pages/article/article" open-type="navigate" class="cu-card article book-card-margin no-card">
-  <view class="cu-item shadow">
-    <view class="title">
-      <view class="text-cut">无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。</view>
-    </view>
-    <view class="content">
-      <image src="../../images/book.png" mode="widthFix"></image>
-      <view class="desc">
-        <view class="text-content"> 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
-        <view>
-          <view class="cu-tag bg-red light sm round">正义天使</view>
-          <view class="cu-tag bg-green light sm round">史诗</view>
-        </view>
-      </view>
+  <view class="cu-list grid no-border col-{{gridCol}} ">
+    <view class="cu-item" wx:for="{{ebookList}}" wx:key="id">
+    <navigator url="../../pages/ebook-detail/ebook-detail" open-type="navigate" hover-class="none">
+      <image class="" src="{{item.image}}"
+       style="width:220rpx;margin:0" mode="widthFix" lazy-load="true" binderror="" bindload=""/>
+      <text class="ebook-title ">{{item.title}}</text>
+      </navigator>
     </view>
   </view>
-</navigator> 
-<navigator  url="../../pages/article/article" open-type="navigate" class="cu-card article book-card-margin no-card">
-  <view class="cu-item shadow">
-    <view class="title">
-      <view class="text-cut">无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。</view>
-    </view>
-    <view class="content">
-      <image src="../../images/book.png" mode="widthFix"></image>
-      <view class="desc">
-        <view class="text-content"> 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
-        <view>
-          <view class="cu-tag bg-red light sm round">正义天使</view>
-          <view class="cu-tag bg-green light sm round">史诗</view>
-        </view>
-      </view>
-    </view>
-  </view>
-</navigator> 
-<navigator  url="../../pages/article/article" open-type="navigate" class="cu-card article book-card-margin no-card">
-  <view class="cu-item shadow">
-    <view class="title">
-      <view class="text-cut">无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。</view>
-    </view>
-    <view class="content">
-      <image src="../../images/book.png" mode="widthFix"></image>
-      <view class="desc">
-        
-        <view class="text-content"> 难，难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
-        <view>
-          <view class="cu-tag bg-red light sm round">正义天使</view>
-          <view class="cu-tag bg-green light sm round">史诗</view>
-        </view>
-      </view>
-    </view>
-  </view>
-</navigator> 
- </scroll-view>
+  </scroll-view>

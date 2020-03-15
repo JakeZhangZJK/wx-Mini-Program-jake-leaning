@@ -8,9 +8,9 @@ page {
 }
 .profile-header {
   background-image: linear-gradient(360deg, #34ace0,#ff6633);
-  /* animation: bganimation 45s infinite; */
+  /* animation: bganimation 5s infinite; */
   /* background-image: radial-gradient(circle, #89e413,#af890b, #ff6633); */
-  /* background-size: 400%; */
+  /* background-size: 200%; */
   height: 480rpx;
   display: flex;
   justify-content: center;

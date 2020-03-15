@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "c-ebook-list":"../../components/booklist/booklist",
+    "c-search":"../../components/search/search"
+  },
+  "navigationBarTitleText": "书架"
+}

@@ -1,0 +1,50 @@
+<view class="ebook-page" hover-class="none" hover-stop-propagation="false">
+  <view class="ebook-detail-container" hover-class="none" hover-stop-propagation="false">
+    <view class="ebook-cover-image">
+      <image class="ebook-cover-image-detail" src="../../images/js-s.jpeg" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+    </view>
+    <view class="ebook-info margin-left">
+      <text class="ebook-title text-xl text-bold">你不知道的JavaScript（上卷）</text>
+      <text class="ebook-title text-lg">作者</text>
+      <text class="ebook-title text-xs text-gray">译者：赵野望 梁杰</text>
+    </view>
+  </view>
+  <view class="ebook-comment flex justify-between margin-top-xl " hover-class="none" hover-stop-propagation="false">
+    <view class="align-center">
+      <text class="margin-right-sm text-xxl ">0.0</text>
+      <block wx:for="{{5}}">
+        <text class="cuIcon-favor text-grey light" style="font-size:36rpx"></text>
+      </block>
+      <view class="comment-count  margin-top-sm text-xs text-gray">0人点评</view>
+    </view>
+    <view class="margin-left align-center">
+      <view class="">
+        <text class="text-xxl">0</text>
+        <text class="margin-left-xs tex-sm text-gray">次访问</text>
+      </view>
+      <view class="cu-avatar-group">
+        <view class="cu-avatar round sm" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10004.jpg);"></view>
+        <view class="cu-avatar round sm" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10003.jpg);"></view>
+        <view class="cu-avatar round sm" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10002.jpg);"></view>
+        <view class="cu-avatar round sm" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+        <view class="cu-avatar round sm" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10004.jpg);"></view>
+        <view class="cu-avatar round sm" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10003.jpg);"></view>
+        <view class="cu-avatar round sm" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10002.jpg);"></view>
+        <view class="cu-avatar round sm" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+        <view class="cu-avatar round sm" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10004.jpg);"></view>
+      </view>
+    </view>
+  </view>
+  <view class="align-center margin-top-lg flex   justify-between solid-bottom padding-bottom-sm" hover-class="none" hover-stop-propagation="false">
+    <text class="text-gray">轻点评分</text>
+    <view class="" hover-class="none" hover-stop-propagation="false">
+      <block wx:for="{{5}}">
+        <text class="cuIcon-favor text-grey light" style="font-size:48rpx"></text>
+      </block>
+    </view>
+  </view>
+</view>
+  <view class="cu-bar foot padding-sm flex justify-between">
+    <button class="cu-btn padding line  round shadow text-orange text-lg foot-btn btn-shujia">加入书架</button>
+    <button class="cu-btn padding margin-left bg-orange round shadow text-lg  foot-btn btn-read">阅读</button>
+  </view>

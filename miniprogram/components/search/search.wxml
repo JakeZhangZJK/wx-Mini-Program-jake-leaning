@@ -4,3 +4,4 @@
   <input placeholder="{{placeholder}}" type="text" class="bar" bindinput="onInput" confirm-type="search"/>
   <button class="search-btn" bind:tap="onSearch">搜索</button>
 </view>
+  

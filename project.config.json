@@ -82,6 +82,20 @@
 					"id": -1,
 					"name": "电子书",
 					"pathName": "pages/ebook/ebook",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "电子书详情页",
+					"pathName": "pages/ebook-detail/ebook-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "书架",
+					"pathName": "pages/ebook-shelf/ebook-shelf",
 					"scene": null
 				}
 			]
