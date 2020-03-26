@@ -1,13 +1,13 @@
 <view class=" blog-ctrl-container margin  bg-white text-gray text-xl flex justify-end">
  
   <view class="view-and-comment-btn" hover-class="none">
-    <text class="cuIcon-attention text-xl margin-lr-xs"></text>
+    <text class="cuIcon-attention text-xl margin-lr-xs text-touch"></text>
     <!-- <text class="text-sm">10</text> -->
-    <text class="cuIcon-message text-xl margin-lr-xs" bind:tap="onComment"></text>
+    <text class="cuIcon-message text-xl margin-lr-xs text-touch" bind:tap="onComment"></text>
     <!-- <text class="text-sm">10</text> -->
   </view>
-  <button class="share-btn text-gray" hover-class="share-hover" open-type="share" data-blogid="{{blogId}}" data-blog="{{blog}}">
-    <text class="cuIcon-share text-xl margin-lr-xs"></text>
+  <button class="share-btn text-gray " hover-class="share-hover" open-type="share" data-blogid="{{blogId}}" data-blog="{{blog}}">
+    <text class="cuIcon-share text-xl margin-lr-xs text-touch"></text>
   </button>
 </view>
 <c-login modalShow="{{loginShow}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail" />

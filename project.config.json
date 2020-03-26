@@ -4,10 +4,22 @@
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
+		"enhance": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"enhance": true
+		"coverView": true,
+		"autoAudits": true,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"appid": "wxfa754f0a5670715b",
 	"projectname": "jake-leeaning",
@@ -96,6 +108,20 @@
 					"id": -1,
 					"name": "书架",
 					"pathName": "pages/ebook-shelf/ebook-shelf",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "面试题页面",
+					"pathName": "pages/Interview-detail/Interview-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "find",
+					"pathName": "pages/find/find",
 					"scene": null
 				}
 			]

@@ -1,9 +1,6 @@
 const app = getApp()
 Page({
   data: {
-    StatusBar: app.globalData.StatusBar,
-    CustomBar: app.globalData.CustomBar,
-    Custom: app.globalData.Custom,
     TabCur: 0,
     MainCur: 0,
     VerticalNavTop: 0,
@@ -16,10 +13,10 @@ Page({
       mask: true
     });
     let list = [{}];
-    for (let i = 0; i < 26; i++) {
+    for (let i = 0; i < 9; i++) {
       list[i] = {};
-      list[i].name = String.fromCharCode(65 + i);
-      list[i].id = i;
+      list[i].name = i+1;
+      list[i].id = i;       
     }
     this.setData({
       list: list,

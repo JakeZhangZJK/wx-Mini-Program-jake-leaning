@@ -3,169 +3,59 @@
   <!-- 头部 -->
   <view class="cu-list menu-avatar">
     <view class="cu-item">
-      <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+      <view class="cu-avatar round lg">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
       <view class="content flex-sub">
-        <view class="text-grey">正义天使 凯尔</view>
+        <view class="text-grey">
+          <open-data type="userNickName" class="nickname"></open-data>
+        </view>
         <view class="text-gray text-sm flex justify-between">
           <view class="text-gray text-sm">
             <text class="cuIcon-attentionfill margin-lr-xs"></text>
-            10
+            {{view}}
             <text class="cuIcon-appreciatefill margin-lr-xs"></text>
-            20
-            <text class="cuIcon-messagefill margin-lr-xs"></text>
-            30
+            {{view}}
+            <text class="cuIcon-markfill margin-lr-xs"></text>
+            {{view}}
           </view>
-          2020-03-07
+          {{time}}
         </view>
       </view>
     </view>
   </view>
   <scroll-view class="article-body bg-white" scroll-y="true" lower-threshold="50" scroll-top="0" scroll-left="0" scroll-with-animation="true" enable-back-to-top="true">
     <view class=" text-xl padding">
-      <text class="text-black text-bold">一文彻底搞懂郭德纲地方还是杠杆收购广告的改革的步伐</text>
+      <text class="text-black text-bold">{{title}}</text>
     </view>
     <!-- 封面图 -->
     <view class="cu-card case">
       <view class="image">
-        <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="widthFix"></image>
-        <view class="cu-tag bg-red">热门</view>
-        <view class="cu-bar bg-shadeBottom">
-          <text class="text-cut">我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。</text>
-        </view>
+        <image src="{{image}}" mode="widthFix"></image>
+        <view class="cu-tag bg-red">{{tag}}</view>
       </view>
     </view>
     <!-- 文章正文 -->
     <view class="article-detail">
-      <rich-text bindtap="tap">
-        call/apply/bind的核心理念
-从上面几个简单的例子可以看出call/apply/bind是在向其他对象借用方法，这也符合我们的正常思维，举个简单的栗子。
-我和我高中一个同学玩的超级好，衣服鞋子都是共穿的，去买衣服的时候，他买衣服，我买鞋子；回来后某天我想穿他买的衣服了，但是我没有，于是我就借用他的穿。这样我就既达到了穿新衣服的目的，又节省了money~
-A对象有个方法，B对象因为某种原因也需要用到同样的方法，这时候就可以让B借用 A 对象的方法啦，既达到了目的，又节省了内存。
-这就是call/apply/bind的核心理念：借。
-call/apply/bind的应用场景
-关于call/apply/bind的用法因篇幅有限就不做展开了，可以看看下面这篇，个人觉得写得超级棒！
-
-「干货」细说 call、apply 以及 bind 的区别和用法
-
-手写实现apply、call、bind
-apply
-1、先给Function原型上扩展个方法并接收2个参数,
-Function.prototype.myApply = function (context, args) {}
-复制代码2、因为不传context的话,this会指向window,所以这里将context和args做一下容错处理。
-Function.prototype.myApply = function (context, args) { 
-    // 处理容错
-    context = (typeof context === 'object' ? context : window)
-    args = args ? args : []
-}
-复制代码3、使用隐式绑定去实现显式绑定
-Function.prototype.myApply = function (context, args) {
-    // 处理容错
-   context = (typeof context === 'object' ? context : window)
-   args = args ? args : []
-    //给context新增一个独一无二的属性以免覆盖原有属性
-    const key = Symbol()
-    context[key] = this
-    //通过隐式绑定的方式调用函数
-    context[key](...args)
-}
-复制代码4、最后一步要返回函数调用的返回值,并且把context上的属性删了才不会造成影响
-Function.prototype.myApply = function (context, args) {
-   // 处理容错
-    context = (typeof context === 'object' ? context : window)
-    args = args ? args : []
-    //给context新增一个独一无二的属性以免覆盖原有属性
-    const key = Symbol();
-    context[key] = this;
-    //通过隐式绑定的方式调用函数
-    const result = context[key](...args);
-    //删除添加的属性
-    delete context[key]
-    //返回函数调用的返回值
-    return result
-}
-复制代码这样一个乞丐版的apply就实现了,至于优化，网上有很多大牛写的很好，可以去找找，这里就不做继续优化了。
-验证走一波~
-
-function fun(...args) {
-  console.log(this.name,...args)
-}
-const result = { 
-name: 'Jake' 
-}
-// 参数为数组;方法立即执行
-fun.myApply (result, [1, 2])
-
-复制代码结果如下，说明已经实现了apply方法。
-
-call
-call的实现几乎和apply一模一样，就直接上代码了。
-//传递参数从一个数组变成逐个传参了,不用...扩展运算符的也可以用arguments代替
-Function.prototype.NealCall = function (context, ...args) {
-    //这里默认不传就是给window,也可以用es6给参数设置默认参数
-     context = (typeof context === 'object' ? context : window)
-    args = args ? args : []
-    //给context新增一个独一无二的属性以免覆盖原有属性
-    const key = Symbol();
-    context[key] = this;
-    //通过隐式绑定的方式调用函数
-    const result = context[key](...args);
-    //删除添加的属性
-    delete context[key];
-    //返回函数调用的返回值
-    return result;
-}
-
-复制代码bind
-bind的实现要稍微麻烦一点，因为bind是返回一个绑定好的函数,apply是直接调用.但其实简单来说就是返回一个函数,里面执行了apply上述的操作而已.不过有一个需要判断的点,因为返回新的函数,要考虑到使用new去调用,并且new的优先级比较高,所以需要判断new的调用,还有一个特点就是bind调用的时候可以传参,调用之后生成的新的函数也可以传参,效果是一样的,所以这一块也要做处理。
-Function.prototype.myBind = function (objThis, ...params) {
-    const thisFn = this; // 存储源函数以及上方的params(函数参数)
-    // 对返回的函数 secondParams 二次传参
-    let fToBind = function (...secondParams) {
-        const isNew = this instanceof fToBind // this是否是fToBind的实例 也就是返回的fToBind是否通过new调用
-        const context = isNew ? this : Object(objThis) // new调用就绑定到this上,否则就绑定到传入的objThis上
-        return thisFn.call(context, ...params, ...secondParams); // 用call调用源函数绑定this的指向并传递参数,返回执行结果
-    };
-    if (thisFn.prototype) {
-        // 复制源函数的prototype给fToBind 一些情况下函数没有prototype，比如箭头函数
-        fToBind.prototype = Object.create(thisFn.prototype);
-    }
-    return fToBind; // 返回拷贝的函数
-};
-
-复制代码总结
-
-在浏览器里，在全局范围内this 指向window对象；
-在函数中，this永远指向最后调用他的那个对象；
-构造函数中，this指向new出来的那个新的对象；
-call、apply、bind中的this被强绑定在指定的那个对象上；
-箭头函数中this比较特殊,箭头函数this为父作用域的this，不是调用时的this.要知道前四种方式,都是调用时确定,也就是动态的,而箭头函数的this指向是静态的,声明的时候就确定了下来；
-apply、call、bind都是js给函数内置的一些API，调用他们可以为函数指定this的执行,同时也可以传参。
-
-后话
-说来惭愧啊，刚学JS的时候我写过一篇关于this的学习笔记，好像2个小时就写完了，本以为一天就能写完这篇，结果前前后后写了好几天，写之前也看了几篇各路大佬写的，我下面都贴了链接，我只能感叹写的是真的好啊！不过这几天下来还是对this这个知识点有了新的的认识。另外，小生乃前端小白一枚，写文章的最初衷是为了让自己对该知识点有更深刻的印象和理解，写的东西也很小白，文中如有不对，欢迎指正~  然后就是希望看完的朋友可以点个喜欢，也可以关注一波~  我会持续输出！
-
-      </rich-text>
+      <!-- <towxml nodes="{{article}}"/> -->
+      <rich-text nodes="{{content}}"></rich-text>
     </view>
     <view class="cu-list menu-avatar comment solids-top">
       <view class="cu-item">
-        <view class="cu-avatar round" style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);"></view>
+        <view class="cu-avatar round">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
         <view class="content">
-          <view class="text-grey">莫甘娜</view>
-          <view class=" text-content text-df">
-            凯尔，你被自己的光芒变的盲目。凯尔，你被自己的光芒变的盲目。凯尔，你被自己的光芒变的盲目。凯尔，你被自己的光芒变的盲目。
+          <view class="text-grey">
+            <open-data type="userNickName" class="nickname"></open-data>
           </view>
-          <!-- <view class=" padding-sm radius margin-top-sm  text-sm">
-            <view class="flex">
-              <view>凯尔：</view>
-              <view class="flex-sub">妹妹，你在帮他们给黑暗找借口吗?</view>
-            </view>
-          </view> -->
+          <view class=" text-content text-df">第一条评论</view>
           <view class="margin-top-sm flex justify-end">
             <view class="text-gray text-df">2018年12月4日</view>
           </view>
         </view>
       </view>
-      </view>
+    </view>
   </scroll-view>
   <!-- 评论组件 -->
   <view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">

@@ -3,7 +3,7 @@
 <c-nav navList="{{navList}}" bindgetnavitem="getItem"></c-nav>
 
 <block wx:if="{{TabCur == 0}}">
-  <c-goodarticle></c-goodarticle>
+  <c-goodarticle goodArticleList="{{goodArticleList}}"></c-goodarticle>
 </block>
 
 <block wx:if="{{TabCur == 1}}">

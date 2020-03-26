@@ -1,7 +1,7 @@
 <!-- 搜索组件 -->
 <view class="container">
 <i class="iconfont icon-sousuo"></i>
-  <input placeholder="{{placeholder}}" type="text" class="bar" bindinput="onInput" confirm-type="search"/>
+  <input placeholder="{{placeholder}}" confirm-type="search" class="bar" bindinput="onInput"/>
   <button class="search-btn" bind:tap="onSearch">搜索</button>
 </view>
   

@@ -12,6 +12,30 @@ Page({
     userName:"JakeZhang"
 
   },
+  onTapQrCode() { 
+    wx.showLoading({
+      title: '生成中...',
+      mask: true
+    })
+    wx.cloud.callFunction({
+      name: 'getQrcode'
+      
+    }).then(res => {
+      // console.log(res)
+      const fileId = res.result
+      wx.previewImage({
+        current: fileId,
+        urls: [fileId],
+        success: (result)=>{
+          
+        },
+        fail: ()=>{},
+        complete: ()=>{}
+      });
+      wx.hideLoading();
+    })
+
+  },
 
   /**
    * 生命周期函数--监听页面加载

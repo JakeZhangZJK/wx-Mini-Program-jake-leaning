@@ -52,19 +52,8 @@ Page({
     
     // 好文推荐数据
     navList:['好文推荐','面试真经'],
-    swiperList: [{
-      id: 0,
-      type: 'image',
-      url: '../../images/banner-3.jpg'
-    }, {
-      id: 1,
-        type: 'image',
-        url: '../../images/banner-2.jpg',
-    }, {
-      id: 2,
-      type: 'image',
-      url: '../../images/banner-1.jpg'
-    }]
+    swiperList: [],
+    goodArticleList:[]
 
   },
   getItem(e) {
@@ -77,6 +66,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.cloud.callFunction({
+      name: 'article',
+      data: {
+        status:1
+      },
+      complete: res => {
+        console.log(res.result.data)
+        this.setData({
+          swiperList:res.result.data
+        })
+      }
+    })
 
   },
 
@@ -91,6 +92,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.cloud.callFunction({
+      name: 'article',
+      data: {
+        status:0
+      },
+      complete: res => {
+        console.log(res.result.data)
+        this.setData({
+          goodArticleList:res.result.data
+        })
+      }
+    })
 
   },
 

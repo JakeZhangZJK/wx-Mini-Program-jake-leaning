@@ -1,2 +1,9 @@
-<!--miniprogram/pages/mine/diary/diary.wxml-->
-<text>我的博客，努力开发ing。。。</text>
+<!-- miniprogram/pages/mine/diary/diary.wxml -->
+<view>
+  <block wx:for="{{blogList}}" wx:key="_id">
+    <view class="blog-panel">
+      <c-blog-card blog="{{item}}" bind:tap="goComment" data-blogid="{{item._id}}" />
+      <c-blog-ctrl blogId="{{item._id}}" blog="{{item}}" />
+    </view>
+  </block>
+</view>

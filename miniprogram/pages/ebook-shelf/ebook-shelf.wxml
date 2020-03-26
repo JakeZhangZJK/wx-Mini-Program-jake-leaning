@@ -1,8 +1,16 @@
 <!--miniprogram/pages/ebook-shelf/ebook-shelf.wxml-->
 <view class="flex align-center padding-sm bg-white" hover-class="none" hover-stop-propagation="false">
-  <text class="margin-right-xs text-df text-grey">清缓存</text>
+   <text class="margin-left-xs text-df text-gray">编辑</text>
   <c-search class="flex-twice"></c-search>
-  <text class="margin-left-xs text-df text-gray">编辑</text>
-
 </view>
-<c-ebook-list ebookList="{{ebookList}}"></c-ebook-list>
+<view class="ebook-shelf-container" hover-class="none" hover-stop-propagation="false">
+  <c-ebook-list ebookList="{{ebookList}}"></c-ebook-list>
+  <navigator class="" target="" url="../ebook/ebook" hover-class="none" open-type="navigate">
+    <view class="add-ebook margin" hover-class="none" hover-stop-propagation="false">
+    <text class="cuIcon-add add-position text-gray" style="font-size:100rpx"></text>
+     </view>
+  </navigator>
+ 
+</view>
+
+

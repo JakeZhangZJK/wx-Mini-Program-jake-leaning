@@ -1,8 +1,8 @@
 <!-- 轮播组件 -->
 <swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
   <swiper-item wx:for="{{swiperList}}" wx:key="id">
-      <navigator class="" target="" url="../../pages/article/article" hover-class="navigator-hover" open-type="navigate">
-        <image src="{{item.url}}" mode="widthFix"/>
+      <navigator class="" target="" url="../../pages/article/article?id={{item._id}}" hover-class="navigator-hover" open-type="navigate">
+        <image src="{{item.image}}" mode="widthFix"/>
       </navigator>
   </swiper-item>
 </swiper>

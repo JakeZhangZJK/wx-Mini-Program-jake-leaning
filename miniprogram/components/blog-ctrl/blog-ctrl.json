@@ -2,7 +2,6 @@
   "component": true,
   "usingComponents":{
     "c-login":"../login/login",
-    "c-bottom-modal":"../bottom-modal/bottom-modal",
-    "c-middle-modal":"../middle-modal/middle-modal"
+    "c-bottom-modal":"../bottom-modal/bottom-modal"
   }
 }

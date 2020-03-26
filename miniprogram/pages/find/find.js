@@ -160,16 +160,13 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function (e) {
-    console.log(e)
-    let blogObj = encodeURIComponent.target.dataset.blog
+  onShareAppMessage: function(event) {
+    // console.log(event)
+    let blogObj = event.target.dataset.blog
     return {
       title: blogObj.content,
-      path: `/pages/blog-comment/blog-comment?blogId=${blogObj._id}`// 必须是完整路径
-      //imageUrl:
-      
+      path: `/pages/blog-comment/blog-comment?blogId=${blogObj._id}`,
+      // imageUrl: ''
     }
-
-
   }
 })
